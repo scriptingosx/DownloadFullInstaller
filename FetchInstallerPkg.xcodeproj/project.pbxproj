@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C635B0AA26789DA9001EEA82 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0A926789DA9001EEA82 /* PreferencesView.swift */; };
+		C635B0AC26789F5F001EEA82 /* SeedProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0AB26789F5F001EEA82 /* SeedProgram.swift */; };
+		C635B0AE2678AC9F001EEA82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */; };
+		C635B0DA2678E9C4001EEA82 /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0D92678E9C4001EEA82 /* Prefs.swift */; };
 		C63643622670E1B800301DC8 /* FetchInstallerPkgApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */; };
 		C63643642670E1B800301DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63643632670E1B800301DC8 /* ContentView.swift */; };
 		C63643662670E1B900301DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63643652670E1B900301DC8 /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C635B0A926789DA9001EEA82 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		C635B0AB26789F5F001EEA82 /* SeedProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProgram.swift; sourceTree = "<group>"; };
+		C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C635B0D92678E9C4001EEA82 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		C636435E2670E1B800301DC8 /* FetchInstallerPkg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchInstallerPkg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchInstallerPkgApp.swift; sourceTree = "<group>"; };
 		C63643632670E1B800301DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,9 +82,11 @@
 			children = (
 				C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */,
 				C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */,
+				C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */,
+				C635B0D92678E9C4001EEA82 /* Prefs.swift */,
+				C69C80CB267787DE00E20E20 /* DownloadManager.swift */,
 				C69C80D926788BD700E20E20 /* Model */,
 				C69C80DE26788C9400E20E20 /* View */,
-				C69C80CB267787DE00E20E20 /* DownloadManager.swift */,
 				C63643652670E1B900301DC8 /* Assets.xcassets */,
 				C63643672670E1B900301DC8 /* Preview Content */,
 			);
@@ -101,6 +111,7 @@
 				C69C80D126788B8D00E20E20 /* Catalog.swift */,
 				C69C80CF26788B6B00E20E20 /* DistParserDelegate.swift */,
 				C69C80CD26788B1400E20E20 /* Product.swift */,
+				C635B0AB26789F5F001EEA82 /* SeedProgram.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,8 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				C63643632670E1B800301DC8 /* ContentView.swift */,
-				C69C80DA26788C4F00E20E20 /* DownloadView.swift */,
 				C69C80DC26788C7900E20E20 /* InstallerView.swift */,
+				C69C80DA26788C4F00E20E20 /* DownloadView.swift */,
+				C635B0A926789DA9001EEA82 /* PreferencesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,9 +200,13 @@
 				C69C80D626788BB600E20E20 /* MetaInfo.swift in Sources */,
 				C63643702670E1F700301DC8 /* SUCatalog.swift in Sources */,
 				C63643642670E1B800301DC8 /* ContentView.swift in Sources */,
+				C635B0AE2678AC9F001EEA82 /* AppDelegate.swift in Sources */,
+				C635B0AA26789DA9001EEA82 /* PreferencesView.swift in Sources */,
 				C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */,
+				C635B0DA2678E9C4001EEA82 /* Prefs.swift in Sources */,
 				C69C80CE26788B1400E20E20 /* Product.swift in Sources */,
 				C63643622670E1B800301DC8 /* FetchInstallerPkgApp.swift in Sources */,
+				C635B0AC26789F5F001EEA82 /* SeedProgram.swift in Sources */,
 				C69C80D826788BC900E20E20 /* BuildManifest.swift in Sources */,
 				C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */,
 				C69C80D426788BA100E20E20 /* Package.swift in Sources */,

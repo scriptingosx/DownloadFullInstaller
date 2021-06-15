@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct FetchInstallerPkgApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+        }
+        Settings {
+            PreferencesView()
         }
     }
 }

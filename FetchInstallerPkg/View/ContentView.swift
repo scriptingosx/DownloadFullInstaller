@@ -19,7 +19,7 @@ struct ContentView: View {
             
             List(catalog.installers, id: \.id) { installer in
                 InstallerView(product: installer)
-            }
+            }.padding(4)
             DownloadView()
         }
         .padding()

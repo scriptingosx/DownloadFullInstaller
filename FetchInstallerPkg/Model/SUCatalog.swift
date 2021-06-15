@@ -8,8 +8,6 @@
 import Foundation
 
 class SUCatalog: ObservableObject {
-    static let catalogAddress = "https://swscan.apple.com/content/catalogs/others/index-11-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
-    
     @Published var catalog: Catalog?
     var products: [String: Product]? { return catalog?.products }
     
@@ -23,12 +21,12 @@ class SUCatalog: ObservableObject {
     }
     
     private func load() {
-        guard let catalogURL = URL(string: SUCatalog.catalogAddress) else {return}
+        let catalogURL = catalogURL(for: Prefs.seedProgram)
+        print(catalogURL.absoluteString)
         
         let sessionConfig = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
 
-        
         let task = session.dataTask(with: catalogURL) { data, response, error in
             
             if error != nil {
