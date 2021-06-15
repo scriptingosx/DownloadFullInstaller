@@ -43,3 +43,15 @@ struct InstallerView: View {
         }
     }
 }
+
+struct InstallerView_Previews: PreviewProvider {
+    static var previews: some View {
+        let catalog = SUCatalog()
+                
+        if let preview_product = catalog.installers.first {
+            InstallerView(product: preview_product)
+        } else {
+            Text("could not load catalog")
+        }
+    }
+}

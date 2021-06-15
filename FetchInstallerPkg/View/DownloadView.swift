@@ -13,11 +13,9 @@ struct DownloadView: View {
     var body: some View {
         if downloadManager.isDownloading {
             VStack(alignment: .leading) {
-                Text("Downloading:")
-                Text("\(downloadManager.downloadURL?.absoluteString ?? "<no name>")")
-                    .font(.footnote)
-                    .lineLimit(1)
-                    .truncationMode(.middle)
+                HStack {
+                    Text("Downloading:")
+                }
                 Text(downloadManager.progressString)
                     .font(.footnote)
                     .lineLimit(1)
@@ -33,12 +31,21 @@ struct DownloadView: View {
             .multilineTextAlignment(.leading)
         }
         if downloadManager.isComplete {
-            Button(action: {
-                downloadManager.revealInFinder()
-            }) {
-                Text("Reveal in Finder")
+            VStack {
+                Text("Finished:")
+                Button(action: {
+                    downloadManager.revealInFinder()
+                }) {
+                    Text("Reveal in Finder")
+                }
             }
         }
+    }
+}
+
+struct DownloadView_Previews : PreviewProvider {
+    static var previews: some View {
+        DownloadView()
     }
 }
 
