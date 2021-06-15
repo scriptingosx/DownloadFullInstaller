@@ -30,6 +30,7 @@ struct InstallerView: View {
                     }
                     HStack {
                         Text(product.postDate, style: .date)
+                            .font(.footnote)
                     }
                 }
                 Spacer()
