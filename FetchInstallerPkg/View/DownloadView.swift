@@ -22,13 +22,13 @@ struct DownloadView: View {
                     .font(.footnote)
                     .lineLimit(1)
                     .truncationMode(.middle)
-                ProgressView(value: downloadManager.progress)
                 HStack {
-                    Spacer()
+                    ProgressView(value: downloadManager.progress)
                     Button(action: {downloadManager.cancel()}) {
-                        Text("Cancel")
+                        Image(systemName: "xmark.circle.fill").accentColor(.gray)
                     }
                 }
+                
             }
             .multilineTextAlignment(.leading)
         }
@@ -41,3 +41,4 @@ struct DownloadView: View {
         }
     }
 }
+
