@@ -11,6 +11,8 @@
 		C63643642670E1B800301DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63643632670E1B800301DC8 /* ContentView.swift */; };
 		C63643662670E1B900301DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63643652670E1B900301DC8 /* Assets.xcassets */; };
 		C63643692670E1B900301DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63643682670E1B900301DC8 /* Preview Assets.xcassets */; };
+		C63643702670E1F700301DC8 /* SUCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636436F2670E1F700301DC8 /* SUCatalog.swift */; };
+		C69C80CC267787DE00E20E20 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80CB267787DE00E20E20 /* DownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		C63643632670E1B800301DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C63643652670E1B900301DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C63643682670E1B900301DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C636436F2670E1F700301DC8 /* SUCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCatalog.swift; sourceTree = "<group>"; };
+		C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FetchInstallerPkg.entitlements; sourceTree = "<group>"; };
+		C69C80CB267787DE00E20E20 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,11 @@
 		C63643602670E1B800301DC8 /* FetchInstallerPkg */ = {
 			isa = PBXGroup;
 			children = (
+				C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */,
 				C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */,
+				C636436F2670E1F700301DC8 /* SUCatalog.swift */,
 				C63643632670E1B800301DC8 /* ContentView.swift */,
+				C69C80CB267787DE00E20E20 /* DownloadManager.swift */,
 				C63643652670E1B900301DC8 /* Assets.xcassets */,
 				C63643672670E1B900301DC8 /* Preview Content */,
 			);
@@ -137,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63643702670E1F700301DC8 /* SUCatalog.swift in Sources */,
 				C63643642670E1B800301DC8 /* ContentView.swift in Sources */,
 				C63643622670E1B800301DC8 /* FetchInstallerPkgApp.swift in Sources */,
+				C69C80CC267787DE00E20E20 /* DownloadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -294,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
