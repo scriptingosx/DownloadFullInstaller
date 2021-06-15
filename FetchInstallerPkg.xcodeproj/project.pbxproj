@@ -13,6 +13,14 @@
 		C63643692670E1B900301DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63643682670E1B900301DC8 /* Preview Assets.xcassets */; };
 		C63643702670E1F700301DC8 /* SUCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636436F2670E1F700301DC8 /* SUCatalog.swift */; };
 		C69C80CC267787DE00E20E20 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80CB267787DE00E20E20 /* DownloadManager.swift */; };
+		C69C80CE26788B1400E20E20 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80CD26788B1400E20E20 /* Product.swift */; };
+		C69C80D026788B6B00E20E20 /* DistParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80CF26788B6B00E20E20 /* DistParserDelegate.swift */; };
+		C69C80D226788B8D00E20E20 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80D126788B8D00E20E20 /* Catalog.swift */; };
+		C69C80D426788BA100E20E20 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80D326788BA100E20E20 /* Package.swift */; };
+		C69C80D626788BB600E20E20 /* MetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80D526788BB600E20E20 /* MetaInfo.swift */; };
+		C69C80D826788BC900E20E20 /* BuildManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80D726788BC900E20E20 /* BuildManifest.swift */; };
+		C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DA26788C4F00E20E20 /* DownloadView.swift */; };
+		C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DC26788C7900E20E20 /* InstallerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		C636436F2670E1F700301DC8 /* SUCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCatalog.swift; sourceTree = "<group>"; };
 		C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FetchInstallerPkg.entitlements; sourceTree = "<group>"; };
 		C69C80CB267787DE00E20E20 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		C69C80CD26788B1400E20E20 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C69C80CF26788B6B00E20E20 /* DistParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistParserDelegate.swift; sourceTree = "<group>"; };
+		C69C80D126788B8D00E20E20 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		C69C80D326788BA100E20E20 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		C69C80D526788BB600E20E20 /* MetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfo.swift; sourceTree = "<group>"; };
+		C69C80D726788BC900E20E20 /* BuildManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildManifest.swift; sourceTree = "<group>"; };
+		C69C80DA26788C4F00E20E20 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
+		C69C80DC26788C7900E20E20 /* InstallerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +74,8 @@
 			children = (
 				C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */,
 				C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */,
-				C636436F2670E1F700301DC8 /* SUCatalog.swift */,
-				C63643632670E1B800301DC8 /* ContentView.swift */,
+				C69C80D926788BD700E20E20 /* Model */,
+				C69C80DE26788C9400E20E20 /* View */,
 				C69C80CB267787DE00E20E20 /* DownloadManager.swift */,
 				C63643652670E1B900301DC8 /* Assets.xcassets */,
 				C63643672670E1B900301DC8 /* Preview Content */,
@@ -73,6 +89,30 @@
 				C63643682670E1B900301DC8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C69C80D926788BD700E20E20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C636436F2670E1F700301DC8 /* SUCatalog.swift */,
+				C69C80D726788BC900E20E20 /* BuildManifest.swift */,
+				C69C80D526788BB600E20E20 /* MetaInfo.swift */,
+				C69C80D326788BA100E20E20 /* Package.swift */,
+				C69C80D126788B8D00E20E20 /* Catalog.swift */,
+				C69C80CF26788B6B00E20E20 /* DistParserDelegate.swift */,
+				C69C80CD26788B1400E20E20 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C69C80DE26788C9400E20E20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C63643632670E1B800301DC8 /* ContentView.swift */,
+				C69C80DA26788C4F00E20E20 /* DownloadView.swift */,
+				C69C80DC26788C7900E20E20 /* InstallerView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +185,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69C80D626788BB600E20E20 /* MetaInfo.swift in Sources */,
 				C63643702670E1F700301DC8 /* SUCatalog.swift in Sources */,
 				C63643642670E1B800301DC8 /* ContentView.swift in Sources */,
+				C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */,
+				C69C80CE26788B1400E20E20 /* Product.swift in Sources */,
 				C63643622670E1B800301DC8 /* FetchInstallerPkgApp.swift in Sources */,
+				C69C80D826788BC900E20E20 /* BuildManifest.swift in Sources */,
+				C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */,
+				C69C80D426788BA100E20E20 /* Package.swift in Sources */,
+				C69C80D226788B8D00E20E20 /* Catalog.swift in Sources */,
 				C69C80CC267787DE00E20E20 /* DownloadManager.swift in Sources */,
+				C69C80D026788B6B00E20E20 /* DistParserDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
