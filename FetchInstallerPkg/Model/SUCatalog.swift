@@ -77,8 +77,8 @@ class SUCatalog: ObservableObject {
                 }
             }
             print("found \(self.installers.count) installer pkgs")
+            installers.sort { $0.postDate > $1.postDate }
         }
-        
     }
 }
 
