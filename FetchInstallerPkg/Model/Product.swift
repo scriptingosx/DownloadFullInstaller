@@ -37,6 +37,14 @@ class Product: Codable, Identifiable, ObservableObject {
         return nil
     }
     
+    var darwinVersion: String {
+        if buildVersion != nil {
+            return String(buildVersion!.prefix(2))
+        } else {
+            return "unknown"
+        }
+    }
+    
     var buildManifestURL: String? {
         let buildManifest = packages.first { $0.url.hasSuffix("BuildManifest.plist")}
         return buildManifest?.url

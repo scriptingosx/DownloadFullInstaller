@@ -14,7 +14,8 @@ struct DownloadView: View {
         if downloadManager.isDownloading {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Downloading:")
+                    Text("Downloading \(downloadManager.filename ?? "InstallAssistant.pkg")")
+                    Spacer()
                     Text(downloadManager.progressString)
                         .font(.footnote)
                         .lineLimit(1)
@@ -31,12 +32,14 @@ struct DownloadView: View {
             .multilineTextAlignment(.leading)
         }
         if downloadManager.isComplete {
-            VStack {
-                Text("Finished:")
+            HStack {
+                Text("Downloading \(downloadManager.filename ?? "InstallAssistant.pkg")")
+                Spacer()
                 Button(action: {
                     downloadManager.revealInFinder()
                 }) {
-                    Text("Reveal in Finder")
+                    Image(systemName: "magnifyingglass.circle")
+                    Text("Show in Finder")
                 }
             }
         }

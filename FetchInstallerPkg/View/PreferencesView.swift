@@ -27,10 +27,10 @@ struct PreferencesView: View {
                     }
 
                 }
-                HStack {
-                    Text("Download to:")
-                    TextField("Download path", text: $downloadPath).environment(\.isEnabled, false)
-                }
+//                HStack {
+//                    Text("Download to:")
+//                    TextField("Download path", text: $downloadPath).environment(\.isEnabled, false)
+//                }
             }
             .padding()
         }

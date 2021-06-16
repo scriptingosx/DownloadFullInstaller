@@ -25,6 +25,7 @@
 		C69C80D826788BC900E20E20 /* BuildManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80D726788BC900E20E20 /* BuildManifest.swift */; };
 		C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DA26788C4F00E20E20 /* DownloadView.swift */; };
 		C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DC26788C7900E20E20 /* InstallerView.swift */; };
+		C6E3CB99267A2AFB007084F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3CB98267A2AFB007084F6 /* IconView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C69C80D726788BC900E20E20 /* BuildManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildManifest.swift; sourceTree = "<group>"; };
 		C69C80DA26788C4F00E20E20 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 		C69C80DC26788C7900E20E20 /* InstallerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerView.swift; sourceTree = "<group>"; };
+		C6E3CB98267A2AFB007084F6 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				C69C80DC26788C7900E20E20 /* InstallerView.swift */,
 				C69C80DA26788C4F00E20E20 /* DownloadView.swift */,
 				C635B0A926789DA9001EEA82 /* PreferencesView.swift */,
+				C6E3CB98267A2AFB007084F6 /* IconView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				C635B0AC26789F5F001EEA82 /* SeedProgram.swift in Sources */,
 				C69C80D826788BC900E20E20 /* BuildManifest.swift in Sources */,
 				C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */,
+				C6E3CB99267A2AFB007084F6 /* IconView.swift in Sources */,
 				C69C80D426788BA100E20E20 /* Package.swift in Sources */,
 				C69C80D226788B8D00E20E20 /* Catalog.swift in Sources */,
 				C69C80CC267787DE00E20E20 /* DownloadManager.swift in Sources */,
@@ -339,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -350,6 +355,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleExecutable = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleName = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -380,6 +389,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleExecutable = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleName = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

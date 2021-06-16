@@ -15,6 +15,7 @@ import AppKit
     @Published var progress: Double = 0.0
     @Published var progressString: String = ""
     @Published var isComplete = false
+    @Published var filename: String?
     
     lazy var urlSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
     var downloadTask : URLSessionDownloadTask?
@@ -60,18 +61,18 @@ extension DownloadManager : URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         NSLog("urlSession, didFinishDownloading")
         guard
-            let cache = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+            let destination = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
         else {
             return
         }
         
         // get the suggest file name or create a uuid string
-        let suggestedFilename = downloadTask.response?.suggestedFilename ?? UUID().uuidString
+        let suggestedFilename = filename ?? downloadTask.response?.suggestedFilename ?? UUID().uuidString
         
         do {
-            let file = cache.appendingPathComponent(suggestedFilename)
+            let file = destination.appendingPathComponent(suggestedFilename)
             let newURL = try FileManager.default.replaceItemAt(file, withItemAt: location)
-            NSLog("downloaded to \(newURL?.path ?? "something went wrong")")
+            NSLog("downloaded to \(newURL?.path ?? "### something went wrong ###")")
             DispatchQueue.main.async {
                 self.isDownloading = false
                 self.localURL = newURL

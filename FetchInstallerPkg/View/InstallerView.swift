@@ -15,11 +15,8 @@ struct InstallerView: View {
             Text("Loading...")
         } else {
             HStack {
-                Image(systemName: "shippingbox")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(Color.blue)
-                    .frame(width: 50.0, height: 40.0)
+                IconView(product: product)
+                
                 VStack(alignment: .leading) {
                     HStack {
                         Text(product.title ?? "<no title>")
@@ -40,6 +37,7 @@ struct InstallerView: View {
                 
                 
                 Button(action: {
+                    DownloadManager.shared.filename = "InstallAssistant-\(product.productVersion ?? "V")-\(product.buildVersion ?? "B").pkg"
                     DownloadManager.shared.download(url: product.installAssistantURL)
                 }) {
                     Image(systemName: "arrow.down.circle").font(.title)
@@ -47,19 +45,31 @@ struct InstallerView: View {
                 .disabled(downloadManager.isDownloading)
                 .buttonStyle(.borderless)
                 .controlSize(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
+            }.contextMenu() {
+                Button(action: {
+                    if let text = product.installAssistantURL?.absoluteString {
+                        let pb = NSPasteboard.general
+                        pb.clearContents()
+                        pb.setString(text, forType: .string)
+                    }
+                }) {
+                    Image(systemName: "doc.on.clipboard")
+                    Text("Copy Download URL")
+                }
             }
         }
     }
 }
 
-struct InstallerView_Previews: PreviewProvider {
-    static var previews: some View {
-        let catalog = SUCatalog()
-                
-        if let preview_product = catalog.installers.first {
-            InstallerView(product: preview_product)
-        } else {
-            Text("could not load catalog")
-        }
-    }
-}
+
+//struct InstallerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let catalog = SUCatalog()
+//                
+//        if let preview_product = catalog.installers.first {
+//            InstallerView(product: preview_product)
+//        } else {
+//            Text("could not load catalog")
+//        }
+//    }
+//}
