@@ -20,7 +20,7 @@ class SUCatalog: ObservableObject {
         load()
     }
     
-    private func load() {
+    func load() {
         let catalogURL = catalogURL(for: Prefs.seedProgram)
         print(catalogURL.absoluteString)
         
@@ -48,6 +48,7 @@ class SUCatalog: ObservableObject {
         isLoading = true
         hasLoaded = false
         self.catalog = nil
+        self.installers = [Product]()
         task.resume()
     }
     

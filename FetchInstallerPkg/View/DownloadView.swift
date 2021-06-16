@@ -15,16 +15,16 @@ struct DownloadView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Text("Downloading:")
+                    Text(downloadManager.progressString)
+                        .font(.footnote)
+                        .lineLimit(1)
+                        .truncationMode(.middle)
                 }
-                Text(downloadManager.progressString)
-                    .font(.footnote)
-                    .lineLimit(1)
-                    .truncationMode(.middle)
                 HStack {
                     ProgressView(value: downloadManager.progress)
                     Button(action: {downloadManager.cancel()}) {
                         Image(systemName: "xmark.circle.fill").accentColor(.gray)
-                    }
+                    }.buttonStyle(.borderless)
                 }
                 
             }

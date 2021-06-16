@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct FetchInstallerPkgApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    @StateObject var sucatalog = SUCatalog()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(sucatalog)
         }
         Settings {
-            PreferencesView()
+            PreferencesView().environmentObject(sucatalog)
         }
     }
 }

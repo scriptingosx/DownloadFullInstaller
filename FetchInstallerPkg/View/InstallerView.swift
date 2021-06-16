@@ -19,26 +19,34 @@ struct InstallerView: View {
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color.blue)
-                    .frame(width: 40.0, height: 40.0)
+                    .frame(width: 50.0, height: 40.0)
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(product.title ?? "<no title>").font(.headline)
+                        Text(product.title ?? "<no title>")
+                            .font(.headline)
+                        Spacer()
                         Text(product.productVersion ?? "<no version>")
-                            .multilineTextAlignment(.leading)
-                            .frame(width: 60.0)
-                        Text(product.buildVersion ?? "<no build>")
+                            .frame(alignment: .trailing)
                     }
                     HStack {
                         Text(product.postDate, style: .date)
                             .font(.footnote)
+                        Spacer()
+                        Text(product.buildVersion ?? "<no build>")
+                            .frame(alignment: .trailing)
+                            .font(.footnote)
                     }
                 }
-                Spacer()
+                
+                
                 Button(action: {
                     DownloadManager.shared.download(url: product.installAssistantURL)
                 }) {
-                    Image(systemName: "arrow.down.circle")
-                }.disabled(downloadManager.isDownloading)
+                    Image(systemName: "arrow.down.circle").font(.title)
+                }
+                .disabled(downloadManager.isDownloading)
+                .buttonStyle(.borderless)
+                .controlSize(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
             }
         }
     }
