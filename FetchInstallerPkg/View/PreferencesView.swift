@@ -15,7 +15,7 @@ struct PreferencesView: View {
     let labelWidth = 100.0
     var body: some View {
         Form {
-            VStack {
+            VStack(alignment: .leading) {
                 HStack {
                     Picker("Seed Program:", selection: $seedProgram) {
                         ForEach(SeedProgram.allCases) { program in
@@ -34,7 +34,7 @@ struct PreferencesView: View {
             }
             .padding()
         }
-        .frame(width: 300.0, height: 300.0)
+        .frame(width: 300.0, height: 200.0)
     }
 }
 

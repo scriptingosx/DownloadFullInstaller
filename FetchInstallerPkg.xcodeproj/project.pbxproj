@@ -33,7 +33,7 @@
 		C635B0AB26789F5F001EEA82 /* SeedProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProgram.swift; sourceTree = "<group>"; };
 		C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635B0D92678E9C4001EEA82 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
-		C636435E2670E1B800301DC8 /* FetchInstallerPkg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchInstallerPkg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C636435E2670E1B800301DC8 /* Download Full Installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Download Full Installer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchInstallerPkgApp.swift; sourceTree = "<group>"; };
 		C63643632670E1B800301DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C63643652670E1B900301DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		C636435F2670E1B800301DC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C636435E2670E1B800301DC8 /* FetchInstallerPkg.app */,
+				C636435E2670E1B800301DC8 /* Download Full Installer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C636435D2670E1B800301DC8 /* FetchInstallerPkg */ = {
+		C636435D2670E1B800301DC8 /* Download Full Installer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C636436C2670E1B900301DC8 /* Build configuration list for PBXNativeTarget "FetchInstallerPkg" */;
+			buildConfigurationList = C636436C2670E1B900301DC8 /* Build configuration list for PBXNativeTarget "Download Full Installer" */;
 			buildPhases = (
 				C636435A2670E1B800301DC8 /* Sources */,
 				C636435B2670E1B800301DC8 /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = FetchInstallerPkg;
+			name = "Download Full Installer";
 			productName = FetchInstallerPkg;
-			productReference = C636435E2670E1B800301DC8 /* FetchInstallerPkg.app */;
+			productReference = C636435E2670E1B800301DC8 /* Download Full Installer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C636435D2670E1B800301DC8 /* FetchInstallerPkg */,
+				C636435D2670E1B800301DC8 /* Download Full Installer */,
 			);
 		};
 /* End PBXProject section */
@@ -345,6 +345,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -355,8 +356,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleExecutable = FetchInstallerPkg;
-				INFOPLIST_KEY_CFBundleName = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
+				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,7 +366,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.FetchInstallerPkg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.downloadfullinstaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,6 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -389,8 +391,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleExecutable = FetchInstallerPkg;
-				INFOPLIST_KEY_CFBundleName = FetchInstallerPkg;
+				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
+				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,7 +401,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.FetchInstallerPkg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.downloadfullinstaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -418,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C636436C2670E1B900301DC8 /* Build configuration list for PBXNativeTarget "FetchInstallerPkg" */ = {
+		C636436C2670E1B900301DC8 /* Build configuration list for PBXNativeTarget "Download Full Installer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C636436D2670E1B900301DC8 /* Debug */,

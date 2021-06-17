@@ -13,10 +13,10 @@ struct FetchInstallerPkgApp: App {
     @StateObject var sucatalog = SUCatalog()
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(sucatalog)
+            ContentView().environmentObject(sucatalog).navigationTitle("")
         }
         Settings {
-            PreferencesView().environmentObject(sucatalog)
+            PreferencesView().environmentObject(sucatalog).navigationTitle("Preferences")
         }
     }
 }
