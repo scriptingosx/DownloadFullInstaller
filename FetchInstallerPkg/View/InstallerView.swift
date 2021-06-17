@@ -10,6 +10,10 @@ import SwiftUI
 struct InstallerView: View {
     @ObservedObject var product: Product
     @StateObject var downloadManager = DownloadManager.shared
+    @State var isReplacingFile = false
+    @State var failed = false
+    @State var filename = "InstallerAssistant.pkg"
+    
     var body: some View {
         if product.isLoading {
             Text("Loading...")
@@ -37,11 +41,44 @@ struct InstallerView: View {
                 
                 
                 Button(action: {
-                    DownloadManager.shared.filename = "InstallAssistant-\(product.productVersion ?? "V")-\(product.buildVersion ?? "B").pkg"
-                    DownloadManager.shared.download(url: product.installAssistantURL)
+                    filename = "InstallAssistant-\(product.productVersion ?? "V")-\(product.buildVersion ?? "B").pkg"
+                    downloadManager.filename = filename
+                    isReplacingFile = downloadManager.fileExists
+                    
+                    if !isReplacingFile {
+                        do {
+                            try downloadManager.download(url: product.installAssistantURL)
+                        } catch {
+                            failed = true
+                        }
+                    }
+                    
                 }) {
                     Image(systemName: "arrow.down.circle").font(.title)
                 }
+                .alert(isPresented: $isReplacingFile) {
+                    Alert(
+                        title: Text("“\(filename)” already exists! Do you want to replace it?"),
+                        message: Text("A file with the same name already exists in that location. Replacing it will overwrite its current contents."),
+                        primaryButton: .cancel(Text("Cancel")),
+                        secondaryButton: .destructive(
+                            Text("Replace"),
+                            action: {
+                        do {
+                            try downloadManager.download(url:  product.installAssistantURL, replacing: true)
+                        } catch {
+                            failed = true
+                        }
+                    }
+                        )
+                    )
+                }
+//                .alert(isPresented: $failed) {
+//                    Alert(
+//                        title: Text("An error occured while downloading"),
+//                        message: Text("Please try again or restart the application.")
+//                    )
+//                }
                 .disabled(downloadManager.isDownloading)
                 .buttonStyle(.borderless)
                 .controlSize(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)

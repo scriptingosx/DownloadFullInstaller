@@ -23,7 +23,17 @@ import AppKit
     
     static let shared = DownloadManager()
     
-    func download(url: URL?) {
+    var fileExists: Bool {
+        let destination = Prefs.downloadURL
+        if self.filename != nil {
+            let file = destination.appendingPathComponent(filename!)
+            return FileManager.default.fileExists(atPath: file.path)
+        } else {
+            return false
+        }
+    }
+    
+    func download(url: URL?, replacing: Bool = false) throws {
         // reset the variables
         progress = 0.0
         isDownloading = true
@@ -32,6 +42,13 @@ import AppKit
         isComplete = false
         
         byteFormatter.countStyle = .file
+        
+        if replacing {
+            let destination = Prefs.downloadURL
+            let suggestedFilename = filename ?? "InstallerAssistant.pkg"
+            let file = destination.appendingPathComponent(suggestedFilename)
+            try FileManager.default.removeItem(at: file)
+        }
         
         if url != nil {
             downloadTask = urlSession.downloadTask(with: url!)
@@ -51,8 +68,8 @@ import AppKit
     
     func revealInFinder() {
         if isComplete {
-            guard let destination = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else { return }
-            NSWorkspace.shared.selectFile(localURL?.path, inFileViewerRootedAtPath: destination.path)
+            let destination = Prefs.downloadPath
+            NSWorkspace.shared.selectFile(localURL?.path, inFileViewerRootedAtPath: destination)
         }
     }
 }
@@ -60,11 +77,7 @@ import AppKit
 extension DownloadManager : URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         NSLog("urlSession, didFinishDownloading")
-        guard
-            let destination = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
-        else {
-            return
-        }
+        let destination = Prefs.downloadURL
         
         // get the suggest file name or create a uuid string
         let suggestedFilename = filename ?? downloadTask.response?.suggestedFilename ?? UUID().uuidString
