@@ -33,7 +33,7 @@ struct DownloadView: View {
         }
         if downloadManager.isComplete {
             HStack {
-                Text("Downloading \(downloadManager.filename ?? "InstallAssistant.pkg")")
+                Text("Downloaded \(downloadManager.filename ?? "InstallAssistant.pkg")")
                 Spacer()
                 Button(action: {
                     downloadManager.revealInFinder()
