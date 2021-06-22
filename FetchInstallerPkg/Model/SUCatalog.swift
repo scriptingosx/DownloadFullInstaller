@@ -22,7 +22,7 @@ class SUCatalog: ObservableObject {
     
     func load() {
         let catalogURL = catalogURL(for: Prefs.seedProgram)
-        print(catalogURL.absoluteString)
+        //print(catalogURL.absoluteString)
         
         let sessionConfig = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -60,7 +60,7 @@ class SUCatalog: ObservableObject {
         self.catalog = try! decoder.decode(Catalog.self, from: data)
         
         if let products = self.products {
-            print("loaded catalog with \(products.count) products")
+            //print("loaded catalog with \(products.count) products")
                         
             for (productKey, product) in products {
                 product.key = productKey
@@ -68,14 +68,14 @@ class SUCatalog: ObservableObject {
                     if metainfo.sharedSupport != nil {
                         // this is an installer, add to list
                         self.installers.append(product)
-                        print("\(productKey) is an installer")
-                        print("    BuildManifest: \(product.buildManifestURL ?? "<no>")")
-                        print("    InstallAssistant: \(String(describing: product.installAssistantURL))")
+                        //print("\(productKey) is an installer")
+                        //print("    BuildManifest: \(product.buildManifestURL ?? "<no>")")
+                        //print("    InstallAssistant: \(String(describing: product.installAssistantURL))")
                         product.loadDistribution()
                     }
                 }
             }
-            print("found \(self.installers.count) installer pkgs")
+            //print("found \(self.installers.count) installer pkgs")
             installers.sort { $0.postDate > $1.postDate }
         }
     }

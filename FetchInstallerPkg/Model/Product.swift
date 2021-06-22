@@ -103,7 +103,7 @@ class Product: Codable, Identifiable, ObservableObject {
         if let buildManifest = try? decoder.decode(BuildManifest.self, from: data) {
             self.buildVersion = buildManifest.productBuildVersion
             self.productVersion = buildManifest.productVersion
-            print("     Build Version: \(self.buildVersion ?? "<none>")")
+            //print("     Build Version: \(self.buildVersion ?? "<none>")")
         }
     }
     
@@ -156,8 +156,8 @@ class Product: Codable, Identifiable, ObservableObject {
         self.installerVersion = delegate.installerVersion
         self.isLoading = false
         self.hasLoaded = true
-        print(self.title ?? "<no title>")
-        print(self.buildVersion ?? "<no buildversion>")
+        //print(self.title ?? "<no title>")
+        //print(self.buildVersion ?? "<no buildversion>")
     }
     
     enum CodingKeys: String, CodingKey {
