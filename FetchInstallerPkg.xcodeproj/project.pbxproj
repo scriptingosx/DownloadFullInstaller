@@ -140,6 +140,7 @@
 				C636435A2670E1B800301DC8 /* Sources */,
 				C636435B2670E1B800301DC8 /* Frameworks */,
 				C636435C2670E1B800301DC8 /* Resources */,
+				C6B969B82681D0A0005717F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +195,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6B969B82681D0A0005717F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "currentversion=$(xcrun agvtool what-version -terse)\ncommitcount=$(git rev-list --count HEAD)\nif [ $commitcount -ne $currentversion ]; then\n    echo \"setting new build version: $commitcount\"\n    xcrun agvtool new-version $commitcount\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C636435A2670E1B800301DC8 /* Sources */ = {
@@ -348,7 +369,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = JME5BW3F3R;
 				ENABLE_APP_SANDBOX = YES;
@@ -358,8 +379,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleVersion = $CURRENT_PROJECT_VERSION;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -383,7 +404,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = JME5BW3F3R;
 				ENABLE_APP_SANDBOX = YES;
@@ -393,8 +414,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_CFBundleVersion = $CURRENT_PROJECT_VERSION;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
