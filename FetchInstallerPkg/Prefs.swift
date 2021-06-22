@@ -20,7 +20,7 @@ struct Prefs {
     
     static func registerDefaults() {
         var prefs = [String: Any]()
-        prefs[Prefs.key(.seedProgram)] = "NoSeed"
+        prefs[Prefs.key(.seedProgram)] = "None"
         
         guard let downloadURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else { return }
         prefs[Prefs.key(.downloadPath)] = downloadURL.path
