@@ -41,4 +41,6 @@ struct Prefs {
         let downloadURL = URL(fileURLWithPath: self.downloadPath)
         return downloadURL
     }
+    
+    static let byteFormatter = ByteCountFormatter()
 }

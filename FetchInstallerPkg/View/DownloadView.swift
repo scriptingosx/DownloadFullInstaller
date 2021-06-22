@@ -38,7 +38,7 @@ struct DownloadView: View {
                 Button(action: {
                     downloadManager.revealInFinder()
                 }) {
-                    Image(systemName: "magnifyingglass.circle")
+                    Image(systemName: "magnifyingglass")
                     Text("Show in Finder")
                 }
             }

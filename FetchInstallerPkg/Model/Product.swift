@@ -50,13 +50,20 @@ class Product: Codable, Identifiable, ObservableObject {
         return buildManifest?.url
     }
     
+    var installerPackage: Package? {
+        return packages.first { $0.url.hasSuffix("InstallAssistant.pkg")}
+    }
+    
     var installAssistantURL: URL? {
-        if let installAssistant = packages.first(where: { $0.url.hasSuffix("InstallAssistant.pkg")}) {
+        if let installAssistant = self.installerPackage {
             return URL(string: installAssistant.url)
         } else {
             return nil
         }
-        
+    }
+    
+    var installAssistantSize: Int {
+        return self.installerPackage?.size ?? 0
     }
     
     func loadBuildManifest() {

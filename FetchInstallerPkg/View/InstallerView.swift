@@ -32,6 +32,8 @@ struct InstallerView: View {
                     HStack {
                         Text(product.postDate, style: .date)
                             .font(.footnote)
+                        Text(Prefs.byteFormatter.string(fromByteCount: Int64(product.installAssistantSize)))
+                            .font(.footnote)
                         Spacer()
                         Text(product.buildVersion ?? "<no build>")
                             .frame(alignment: .trailing)
