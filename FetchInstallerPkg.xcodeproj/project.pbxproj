@@ -49,6 +49,7 @@
 		C69C80D726788BC900E20E20 /* BuildManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildManifest.swift; sourceTree = "<group>"; };
 		C69C80DA26788C4F00E20E20 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 		C69C80DC26788C7900E20E20 /* InstallerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerView.swift; sourceTree = "<group>"; };
+		C6B969B92681D3BE005717F1 /* Download-Full-Installer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Download-Full-Installer-Info.plist"; sourceTree = "<group>"; };
 		C6E3CB98267A2AFB007084F6 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +67,7 @@
 		C63643552670E1B800301DC8 = {
 			isa = PBXGroup;
 			children = (
+				C6B969B92681D3BE005717F1 /* Download-Full-Installer-Info.plist */,
 				C63643602670E1B800301DC8 /* FetchInstallerPkg */,
 				C636435F2670E1B800301DC8 /* Products */,
 			);
@@ -140,7 +142,7 @@
 				C636435A2670E1B800301DC8 /* Sources */,
 				C636435B2670E1B800301DC8 /* Frameworks */,
 				C636435C2670E1B800301DC8 /* Resources */,
-				C6B969B82681D0A0005717F1 /* ShellScript */,
+				C6B969B82681D0A0005717F1 /* Update Build Version */,
 			);
 			buildRules = (
 			);
@@ -197,7 +199,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C6B969B82681D0A0005717F1 /* ShellScript */ = {
+		C6B969B82681D0A0005717F1 /* Update Build Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -206,6 +208,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Update Build Version";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -213,6 +216,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "currentversion=$(xcrun agvtool what-version -terse)\ncommitcount=$(git rev-list --count HEAD)\nif [ $commitcount -ne $currentversion ]; then\n    echo \"setting new build version: $commitcount\"\n    xcrun agvtool new-version $commitcount\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -369,7 +373,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = JME5BW3F3R;
 				ENABLE_APP_SANDBOX = YES;
@@ -377,9 +381,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Download-Full-Installer-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
-				INFOPLIST_KEY_CFBundleVersion = $CURRENT_PROJECT_VERSION;
+				INFOPLIST_KEY_CFBundleVersion = 17;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,7 +409,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = JME5BW3F3R;
 				ENABLE_APP_SANDBOX = YES;
@@ -412,9 +417,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Download-Full-Installer-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
-				INFOPLIST_KEY_CFBundleVersion = $CURRENT_PROJECT_VERSION;
+				INFOPLIST_KEY_CFBundleVersion = 17;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
