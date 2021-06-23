@@ -22,7 +22,7 @@ struct MetaInfo: Codable {
     var info: String? {
         return installAssistantPackageIdentifiers?["Info"]
     }
-    var updateBran: String? {
+    var updateBrain: String? {
         return installAssistantPackageIdentifiers?["UpdateBrain"]
     }
     var buildManifest: String? {
