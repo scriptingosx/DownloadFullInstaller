@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SUCatalog: ObservableObject {
+final class SUCatalog: ObservableObject {
     @Published var catalog: Catalog?
     var products: [String: Product]? { return catalog?.products }
     
@@ -21,7 +21,7 @@ class SUCatalog: ObservableObject {
     }
     
     func load() {
-        let catalogURL = catalogURL(for: Prefs.seedProgram)
+        let catalogURL = (Prefs.seedProgram ?? .publicSeed).catalogURL
         //print(catalogURL.absoluteString)
         
         let sessionConfig = URLSessionConfiguration.ephemeral
@@ -29,8 +29,8 @@ class SUCatalog: ObservableObject {
 
         let task = session.dataTask(with: catalogURL) { data, response, error in
             
-            if error != nil {
-                print(error!.localizedDescription)
+            if let error = error {
+                print(error.localizedDescription)
                 return
             }
             
@@ -38,17 +38,15 @@ class SUCatalog: ObservableObject {
             if httpResponse.statusCode != 200 {
                 print(httpResponse.statusCode)
             } else {
-                if data != nil {
-                    //print(String(decoding: data!, as: UTF8.self))
-                    DispatchQueue.main.async {
-                        self.decode(data: data!)                    }
+                if let data = data {
+                    self.decode(data: data)
                  }
             }
         }
         isLoading = true
         hasLoaded = false
-        self.catalog = nil
-        self.installers = [Product]()
+        catalog = nil
+        installers = [Product]()
         task.resume()
     }
     

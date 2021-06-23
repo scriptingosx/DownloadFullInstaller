@@ -20,7 +20,7 @@ struct Prefs {
     
     static func registerDefaults() {
         var prefs = [String: Any]()
-        prefs[Prefs.key(.seedProgram)] = SeedProgram.noSeed.rawValue
+//        prefs[Prefs.key(.seedProgram)] = SeedProgram.noSeed.rawValue
         
         guard let downloadURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else { return }
         prefs[Prefs.key(.downloadPath)] = downloadURL.path
@@ -28,9 +28,9 @@ struct Prefs {
         UserDefaults.standard.register(defaults: prefs)
     }
 
-    static var seedProgram: SeedProgram {
-        let seedValue = UserDefaults.standard.string(forKey: Prefs.key(.seedProgram)) ?? ""
-        return SeedProgram(rawValue: seedValue) ?? .noSeed
+    static var seedProgram: SeedCatalog.Program? {
+        guard let seedValue = UserDefaults.standard.string(forKey: Prefs.key(.seedProgram)) else { return nil }
+        return SeedCatalog.Program(rawValue: seedValue)
     }
     
     static var downloadPath: String {

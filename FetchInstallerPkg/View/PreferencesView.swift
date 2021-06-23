@@ -10,7 +10,7 @@ import SwiftUI
 struct PreferencesView: View {
     @AppStorage(Prefs.key(.seedProgram)) var seedProgram: String = ""
     @AppStorage(Prefs.key(.downloadPath)) var downloadPath: String = ""
-    @EnvironmentObject var sucatalog: SUCatalog
+    @EnvironmentObject var suCatalog: SUCatalog
     
     let labelWidth = 100.0
     var body: some View {
@@ -18,12 +18,12 @@ struct PreferencesView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Picker("Seed Program:", selection: $seedProgram) {
-                        ForEach(SeedProgram.allCases) { program in
+                        ForEach(SeedCatalog.Program.allCases) { program in
                             Text(program.rawValue)
                         }
                     }
                     .onChange(of: seedProgram) { _ in
-                        sucatalog.load()
+                        suCatalog.load()
                     }
 
                 }

@@ -67,8 +67,8 @@ class Product: Codable, Identifiable, ObservableObject {
     }
     
     func loadBuildManifest() {
-        guard let urlString = self.buildManifestURL else {return}
-        guard let url = URL(string: urlString) else {return}
+        guard let urlString = self.buildManifestURL else { return }
+        guard let url = URL(string: urlString) else { return }
         
         let sessionConfig = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
