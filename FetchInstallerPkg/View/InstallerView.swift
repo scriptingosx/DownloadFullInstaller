@@ -84,6 +84,8 @@ struct InstallerView: View {
                 .disabled(downloadManager.isDownloading)
                 .buttonStyle(.borderless)
                 .controlSize(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
+                .accessibilityLabel("Download Installer \(product.productVersion ?? "unknown")")
+                
             }.contextMenu() {
                 Button(action: {
                     if let text = product.installAssistantURL?.absoluteString {
