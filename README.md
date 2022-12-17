@@ -53,7 +53,7 @@ Download Full Installer does not prevent the system from going to sleep while an
 
 ``` bash
 /Users/yo > top | grep "Download"
-2233  Download Full In (more text)
+2233  Download Full In (more text...)
 ^C
 /Users/yo > caffeinate -w 2233
 
