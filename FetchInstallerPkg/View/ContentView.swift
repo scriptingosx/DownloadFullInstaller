@@ -24,7 +24,6 @@ struct ContentView: View {
             DownloadView()
         }
         .padding()
-        .frame(minWidth: 400.0, maxWidth: 500.0, minHeight: 400.0)
         
     }
 }
