@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/v/release/scriptingosx/DownloadFullInstaller)&nbsp;![](https://img.shields.io/github/downloads/scriptingosx/DownloadFullInstaller/latest/total)&nbsp;![](https://img.shields.io/badge/macOS-11.0%2B-success)
 
-![](DownloadFullInstaller-1.0-screenshot.png)
+![](DownloadFullInstaller-1.2-screenshot.png)
 
 This is a Swift UI implementation of my [fetch-installer-pkg](https://github.com/scriptingosx/fetch-installer-pkg) script. It will list the full macOS Big Sur (and later) installer pkgs available for download in Apple's software update catalogs.
 
