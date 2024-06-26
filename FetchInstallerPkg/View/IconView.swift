@@ -17,7 +17,32 @@ struct IconView: View {
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color.blue)
-            } else {
+            }
+            else if product.darwinVersion == "21" {
+                Image("Monterey")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+            }
+            else if product.darwinVersion == "22" {
+                Image("Ventura")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+            }
+            else if product.darwinVersion == "23" {
+                Image("Sonoma")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+            }
+            else if product.darwinVersion == "24" {
+                Image("Sequoia")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+            }
+            else {
                 Image("macOS")
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
