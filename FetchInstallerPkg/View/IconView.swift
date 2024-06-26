@@ -36,6 +36,12 @@ struct IconView: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color.blue)
             }
+           else if product.darwinVersion == "24" {
+                Image("Sequoia")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+            }
             else {
                 Image("macOS")
                     .resizable(resizingMode: .stretch)
