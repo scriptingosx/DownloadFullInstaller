@@ -5,15 +5,15 @@
 //  Created by Armin Briegel on 2021-06-15.
 //
 
-import Foundation
 import AppKit
+import Foundation
 
 enum DefaultsKeys: String {
     case seedProgram = "SeedProgram"
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ notification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         Prefs.registerDefaults()
     }
 }

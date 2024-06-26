@@ -12,7 +12,7 @@ struct Package: Codable {
     let url: String
     let digest: String?
     let metadataURL: String?
-        
+
     enum CodingKeys: String, CodingKey {
         case size = "Size"
         case url = "URL"

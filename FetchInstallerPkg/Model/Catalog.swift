@@ -12,7 +12,7 @@ struct Catalog: Codable {
     let applePostURL: String
     let indexDate: Date
     let products: [String: Product]
-    
+
     enum CodingKeys: String, CodingKey {
         case catalogVersion = "CatalogVersion"
         case applePostURL = "ApplePostURL"

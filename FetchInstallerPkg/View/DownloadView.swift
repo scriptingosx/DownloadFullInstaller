@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DownloadView: View {
     @StateObject var downloadManager = DownloadManager.shared
-    
+
     var body: some View {
         if downloadManager.isDownloading {
             VStack(alignment: .leading) {
@@ -23,11 +23,10 @@ struct DownloadView: View {
                 }
                 HStack {
                     ProgressView(value: downloadManager.progress)
-                    Button(action: {downloadManager.cancel()}) {
+                    Button(action: { downloadManager.cancel() }) {
                         Image(systemName: "xmark.circle.fill").accentColor(.gray)
                     }.buttonStyle(.borderless)
                 }
-                
             }
             .multilineTextAlignment(.leading)
         }
@@ -46,9 +45,8 @@ struct DownloadView: View {
     }
 }
 
-struct DownloadView_Previews : PreviewProvider {
+struct DownloadView_Previews: PreviewProvider {
     static var previews: some View {
         DownloadView()
     }
 }
-

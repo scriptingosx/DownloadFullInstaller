@@ -13,14 +13,14 @@ struct InstallerView: View {
     @State var isReplacingFile = false
     @State var failed = false
     @State var filename = "InstallerAssistant.pkg"
-    
+
     var body: some View {
         if product.isLoading {
             Text("Loading...")
         } else {
             HStack {
                 IconView(product: product)
-                
+
                 VStack(alignment: .leading) {
                     HStack {
                         Text(product.title ?? "<no title>")
@@ -40,13 +40,12 @@ struct InstallerView: View {
                             .font(.footnote)
                     }
                 }
-                
-                
+
                 Button(action: {
                     filename = "InstallAssistant-\(product.productVersion ?? "V")-\(product.buildVersion ?? "B").pkg"
                     downloadManager.filename = filename
                     isReplacingFile = downloadManager.fileExists
-                    
+
                     if !isReplacingFile {
                         do {
                             try downloadManager.download(url: product.installAssistantURL)
@@ -54,7 +53,7 @@ struct InstallerView: View {
                             failed = true
                         }
                     }
-                    
+
                 }) {
                     Image(systemName: "arrow.down.circle").font(.title)
                 }
@@ -66,12 +65,12 @@ struct InstallerView: View {
                         secondaryButton: .destructive(
                             Text("Replace"),
                             action: {
-                        do {
-                            try downloadManager.download(url:  product.installAssistantURL, replacing: true)
-                        } catch {
-                            failed = true
-                        }
-                    }
+                                do {
+                                    try downloadManager.download(url: product.installAssistantURL, replacing: true)
+                                } catch {
+                                    failed = true
+                                }
+                            }
                         )
                     )
                 }
@@ -83,8 +82,8 @@ struct InstallerView: View {
 //                }
                 .disabled(downloadManager.isDownloading)
                 .buttonStyle(.borderless)
-                .controlSize(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/)
-            }.contextMenu() {
+                .controlSize(/*@START_MENU_TOKEN@*/ .large/*@END_MENU_TOKEN@*/)
+            }.contextMenu {
                 Button(action: {
                     if let text = product.installAssistantURL?.absoluteString {
                         let pb = NSPasteboard.general
@@ -100,15 +99,14 @@ struct InstallerView: View {
     }
 }
 
-
-//struct InstallerView_Previews: PreviewProvider {
+// struct InstallerView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let catalog = SUCatalog()
-//                
+//
 //        if let preview_product = catalog.installers.first {
 //            InstallerView(product: preview_product)
 //        } else {
 //            Text("could not load catalog")
 //        }
 //    }
-//}
+// }
