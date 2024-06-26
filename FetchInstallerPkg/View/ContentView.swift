@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @EnvironmentObject var sucatalog: SUCatalog
     @AppStorage(Prefs.key(.seedProgram)) var seedProgram: String = ""
-
+    
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading){
             Text("Download Full Installer")
                 .font(.title)
                 .multilineTextAlignment(.leading)
-
+            
             List(sucatalog.installers, id: \.id) { installer in
                 InstallerView(product: installer)
             }.padding(4)
@@ -32,3 +33,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
+

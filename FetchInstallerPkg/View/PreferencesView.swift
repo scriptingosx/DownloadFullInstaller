@@ -11,7 +11,7 @@ struct PreferencesView: View {
     @AppStorage(Prefs.key(.seedProgram)) var seedProgram: String = ""
     @AppStorage(Prefs.key(.downloadPath)) var downloadPath: String = ""
     @EnvironmentObject var sucatalog: SUCatalog
-
+    
     let labelWidth = 100.0
     var body: some View {
         Form {
@@ -25,6 +25,7 @@ struct PreferencesView: View {
                     .onChange(of: seedProgram) { _ in
                         sucatalog.load()
                     }
+
                 }
 //                HStack {
 //                    Text("Download to:")
