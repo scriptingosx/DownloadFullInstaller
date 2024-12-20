@@ -1,0 +1,22 @@
+{
+  "images": [
+	{
+	  "filename": "macOS Sequoia Light.png",
+	  "idiom": "mac"
+	},
+	{
+		"appearances": [
+			{
+				"appearance": "luminosity",
+				"value": "dark"
+			}
+   ],
+   "filename": "macOS Sequoia Dark.png",
+   "idiom": "mac"
+ }
+  ],
+  "info": {
+	"author": "xcode",
+	"version": 1
+  }
+}

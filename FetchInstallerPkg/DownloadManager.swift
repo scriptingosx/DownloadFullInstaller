@@ -16,6 +16,7 @@ import AppKit
     @Published var progressString: String = ""
     @Published var isComplete = false
     @Published var filename: String?
+	@Published var installerURLFiles: [URL]?
     
     lazy var urlSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
     var downloadTask : URLSessionDownloadTask?
@@ -45,7 +46,8 @@ import AppKit
         
         if replacing {
             let destination = Prefs.downloadURL
-            let suggestedFilename = filename ?? "InstallerAssistant.pkg"
+//			let suggestedFilename: [String] = filename ?? "InstallerAssistant.pkg"
+			let suggestedFilename = filename ?? "InstallerAssistant.pkg"
             let file = destination.appendingPathComponent(suggestedFilename)
             try FileManager.default.removeItem(at: file)
         }

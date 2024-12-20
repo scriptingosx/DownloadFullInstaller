@@ -8,11 +8,15 @@
 import Foundation
 
 class SUCatalog: ObservableObject {
+	
+	var thisComponent: String { return String(describing: self)	}
+
     @Published var catalog: Catalog?
-    var products: [String: Product]? { return catalog?.products }
+	var products: [String: Product]? { return catalog?.products }
     
-    @Published var installers = [Product]()
-    
+	@Published var installers = [Product]()
+	var uniqueInstallersList: [String] = []
+	
     @Published var isLoading = false
     @Published var hasLoaded = false
     
@@ -21,35 +25,38 @@ class SUCatalog: ObservableObject {
     }
     
     func load() {
-        let catalogURL = catalogURL(for: Prefs.seedProgram)
-        //print(catalogURL.absoluteString)
+		uniqueInstallersList = []
+		let catalogURLArray: [URL] = catalogURL(for: Prefs.seedProgram, for: Prefs.osNameID)
+		//print("\(self.thisComponent) : \(String(describing: catalogURL))")
         
-        let sessionConfig = URLSessionConfiguration.ephemeral
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-
-        let task = session.dataTask(with: catalogURL) { data, response, error in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let httpResponse = response as! HTTPURLResponse
-            if httpResponse.statusCode != 200 {
-                print(httpResponse.statusCode)
-            } else {
-                if data != nil {
-                    //print(String(decoding: data!, as: UTF8.self))
-                    DispatchQueue.main.async {
-                        self.decode(data: data!)                    }
-                 }
-            }
-        }
+		catalogURLArray.forEach {
+			let sessionConfig = URLSessionConfiguration.ephemeral
+			let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+			
+			let task = session.dataTask(with: $0) { data, response, error in
+				
+				if error != nil {
+					print("\(self.thisComponent) : \(error!.localizedDescription)")
+					return
+				}
+				
+				let httpResponse = response as! HTTPURLResponse
+				if httpResponse.statusCode != 200 {
+					print("\(self.thisComponent) : \(httpResponse.statusCode)")
+				} else {
+					if data != nil {
+						//print("\(self.thisComponent) : \(String(decoding: data!, as: UTF8.self))")
+						DispatchQueue.main.async {
+							self.decode(data: data!)                    }
+					}
+				}
+			}
         isLoading = true
         hasLoaded = false
         self.catalog = nil
-        self.installers = [Product]()
+		self.installers = [Product]()
         task.resume()
+		}
     }
     
     private func decode(data: Data) {
@@ -60,28 +67,26 @@ class SUCatalog: ObservableObject {
         self.catalog = try! decoder.decode(Catalog.self, from: data)
         
         if let products = self.products {
-            //print("loaded catalog with \(products.count) products")
-                        
-            for (productKey, product) in products {
+			print("\(self.thisComponent) : Installer Nb : loaded \(Prefs.seedProgram) catalog with \(products.count) products")
+			
+			for (productKey, product) in products {
                 product.key = productKey
-                if let metainfo = product.extendedMetaInfo {
-                    if metainfo.sharedSupport != nil {
-                        // this is an installer, add to list
-                        self.installers.append(product)
-                        //print("\(productKey) is an installer")
-                        //print("    BuildManifest: \(product.buildManifestURL ?? "<no>")")
-                        //print("    InstallAssistant: \(String(describing: product.installAssistantURL))")
-                        product.loadDistribution()
-                    }
-                }
+				if let metainfo = product.extendedMetaInfo {
+					if metainfo.sharedSupport != nil {
+						if !uniqueInstallersList.contains(productKey) {
+							// this is an installer, add to list
+							print("\(self.thisComponent) : Installer ID : \(productKey)")
+							uniqueInstallersList.append(productKey)
+							self.installers.append(product)
+							//print("\(self.thisComponent) :     BuildManifest: \(product.buildManifestURL ?? "<no>")")
+							//print("\(self.thisComponent) :     InstallAssistant: \(String(describing: product.installAssistantURL))")
+							product.loadDistribution()
+						}
+					}
+				}
             }
-            //print("found \(self.installers.count) installer pkgs")
-            installers.sort { $0.postDate > $1.postDate }
-        }
+            //print("\(self.thisComponent) : \(self.installers.count) installer pkgs found")
+			installers.sort { $0.postDate > $1.postDate }
+		}
     }
 }
-
-
-
-
-

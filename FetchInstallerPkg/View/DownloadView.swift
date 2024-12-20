@@ -25,6 +25,7 @@ struct DownloadView: View {
                     ProgressView(value: downloadManager.progress)
                     Button(action: {downloadManager.cancel()}) {
                         Image(systemName: "xmark.circle.fill").accentColor(.gray)
+                            .help("Cancel \(downloadManager.filename ?? "InstallAssistant.pkg") download")
                     }.buttonStyle(.borderless)
                 }
                 

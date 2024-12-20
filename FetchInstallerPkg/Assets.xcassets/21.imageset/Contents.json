@@ -1,0 +1,22 @@
+{
+  "images": [
+	{
+	  "filename": "macOS Monterey Light.png",
+	  "idiom": "mac"
+	},
+	{
+		"appearances": [
+			{
+				"appearance": "luminosity",
+				"value": "dark"
+			}
+   ],
+   "filename": "macOS Monterey Dark.png",
+   "idiom": "mac"
+ }
+  ],
+  "info": {
+	"author": "xcode",
+	"version": 1
+  }
+}

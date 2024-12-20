@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "OS X El Capitan.png",
+      "idiom" : "mac"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

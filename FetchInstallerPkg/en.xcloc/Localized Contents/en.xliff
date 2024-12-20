@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="en.lproj/Download-Full-Installer-InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.1" build-num="16B40"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Download Full Installer</source>
+        <target>Download Full Installer</target>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSHumanReadableCopyright" xml:space="preserve">
+        <source>©2021 Scripting OS X - Armin Briegel
+@2024 Matxpa (update to version 2.0)</source>
+        <target>©2021 Scripting OS X - Armin Briegel
+@2024 Matxpa (update to version 2.0)</target>
+        <note>Copyright (human-readable)</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.1" build-num="16B40"/>
+    </header>
+    <body>
+      <trans-unit id="&#10;&#10;" xml:space="preserve">
+        <source>
+
+</source>
+        <target>
+
+</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="  in" xml:space="preserve">
+        <source>  in</source>
+        <target>  in</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="A file with the same name already exists in that location. Replacing it will overwrite its current contents." xml:space="preserve">
+        <source>A file with the same name already exists in that location. Replacing it will overwrite its current contents.</source>
+        <target>A file with the same name already exists in that location. Replacing it will overwrite its current contents.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cancel" xml:space="preserve">
+        <source>Cancel</source>
+        <target>Cancel</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Copy %@ %@ (%@) %@ URL" xml:space="preserve">
+        <source>Copy %@ %@ (%@) %@ URL</source>
+        <target>Copy %@ %@ (%@) %@ URL</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create application %@ %@ (%@)" xml:space="preserve">
+        <source>Create application %@ %@ (%@)</source>
+        <target>Create application %@ %@ (%@)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Download %@ %@ (%@) Installer" xml:space="preserve">
+        <source>Download %@ %@ (%@) Installer</source>
+        <target>Download %@ %@ (%@) Installer</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Download Full Installer" xml:space="preserve">
+        <source>Download Full Installer</source>
+        <target>Download Full Installer</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Downloaded %@" xml:space="preserve">
+        <source>Downloaded %@</source>
+        <target>Downloaded %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Downloading %@" xml:space="preserve">
+        <source>Downloading %@</source>
+        <target>Downloading %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Replace" xml:space="preserve">
+        <source>Replace</source>
+        <target>Replace</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Show in Finder" xml:space="preserve">
+        <source>Show in Finder</source>
+        <target>Show in Finder</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="“%@” already exists! Do you want to replace it?" xml:space="preserve">
+        <source>“%@” already exists! Do you want to replace it?</source>
+        <target>“%@” already exists! Do you want to replace it?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

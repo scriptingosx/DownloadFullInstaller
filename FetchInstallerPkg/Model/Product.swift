@@ -8,14 +8,19 @@
 import Foundation
 
 class Product: Codable, Identifiable, ObservableObject {
-    let serverMetadataURL: String?
-    let packages: [Package]
-    let postDate: Date
-    let distributions: [String: String]
-    let extendedMetaInfo: MetaInfo?
-    
+	
+	var thisComponent: String { return String(describing: self)	}
+
+	let serverMetadataURL: String?
+	let packages: [Package]
+	let postDate: Date
+	let distributions: [String: String]
+	let extendedMetaInfo: MetaInfo?
+
+	@Published var sucatalog: SUCatalog?
     @Published var key: String?
-    
+
+	@Published var osName: String?
     @Published var title: String?
     @Published var buildVersion: String?
     var id : String {
@@ -24,11 +29,11 @@ class Product: Codable, Identifiable, ObservableObject {
     
     @Published var productVersion: String?
     @Published var installerVersion: String?
-    
+
     @Published var isLoading = false
     @Published var hasLoaded = false
-    
-    var distributionURL: String? {
+
+	var distributionURL: String? {
         if distributions.keys.contains("English") {
             return distributions["English"]!
         } else if distributions.keys.contains("en"){
@@ -50,23 +55,41 @@ class Product: Codable, Identifiable, ObservableObject {
         return buildManifest?.url
     }
     
-    var installerPackage: Package? {
+    var installerASSPackage: Package? {
         return packages.first { $0.url.hasSuffix("InstallAssistant.pkg")}
     }
-    
-    var installAssistantURL: URL? {
-        if let installAssistant = self.installerPackage {
-            return URL(string: installAssistant.url)
-        } else {
-            return nil
-        }
-    }
+	
+	var installerESDPackage: Package? {
+		return packages.first { $0.url.hasSuffix("InstallESDDmg.pkg")}
+	}
+	
+	var installAssistantURL: URL? {
+		if let installAssistant = self.installerASSPackage {
+			print("\(self.thisComponent) : \(installAssistant)")
+			return URL(string: installAssistant.url)
+		} else {
+			if let installAssistant = self.installerESDPackage {
+				print("\(self.thisComponent) : \(installAssistant)")
+				return URL(string: installAssistant.url)
+			} else {
+				return nil
+			}
+		}
+	}
     
     var installAssistantSize: Int {
-        return self.installerPackage?.size ?? 0
+		if self.installerASSPackage != nil {
+			return self.installerASSPackage?.size ?? 0
+		} else {
+			if self.installerESDPackage != nil {
+				return self.installerESDPackage?.size ?? 0
+			} else {
+				return 0
+			}
+		}
     }
     
-    func loadBuildManifest() {
+	func loadBuildManifest() {
         guard let urlString = self.buildManifestURL else {return}
         guard let url = URL(string: urlString) else {return}
         
@@ -77,16 +100,16 @@ class Product: Codable, Identifiable, ObservableObject {
         let task = session.dataTask(with: url) { data, response, error in
             
             if error != nil {
-                print(error!.localizedDescription)
+				print("\(self.thisComponent) : \(error!.localizedDescription)")
                 return
             }
             
             let httpResponse = response as! HTTPURLResponse
             if httpResponse.statusCode != 200 {
-                print(httpResponse.statusCode)
+				print("\(self.thisComponent) : \(httpResponse.statusCode)")
             } else {
                 if data != nil {
-                    //print(String(decoding: data!, as: UTF8.self))
+					//print("\(self.thisComponent) : \(String(decoding: data!, as: UTF8.self))")
                     DispatchQueue.main.async {
                         self.decodeBuildManifest(data: data!)                    }
                  }
@@ -95,7 +118,8 @@ class Product: Codable, Identifiable, ObservableObject {
         
         isLoading = true
         hasLoaded = false
-        title = nil
+		osName = nil
+		title = nil
         buildVersion = nil
         productVersion = nil
         installerVersion = nil
@@ -110,7 +134,7 @@ class Product: Codable, Identifiable, ObservableObject {
         if let buildManifest = try? decoder.decode(BuildManifest.self, from: data) {
             self.buildVersion = buildManifest.productBuildVersion
             self.productVersion = buildManifest.productVersion
-            //print("     Build Version: \(self.buildVersion ?? "<none>")")
+			print("\(self.thisComponent) :      Build Version: \(self.buildVersion ?? "<none>")")
         }
     }
     
@@ -125,18 +149,19 @@ class Product: Codable, Identifiable, ObservableObject {
         let task = session.dataTask(with: url) { data, response, error in
             
             if error != nil {
-                print(error!.localizedDescription)
+				print("\(self.thisComponent) : \(error!.localizedDescription)")
                 return
             }
             
             let httpResponse = response as! HTTPURLResponse
             if httpResponse.statusCode != 200 {
-                print(httpResponse.statusCode)
+				print("\(self.thisComponent) : \(httpResponse.statusCode)")
             } else {
                 if data != nil {
-                    //print(String(decoding: data!, as: UTF8.self))
+					//print("\(self.thisComponent) : \(String(decoding: data!, as: UTF8.self))")
                     DispatchQueue.main.async {
-                        self.parseDistXML(data: data!)                    }
+                        self.parseDistXML(data: data!)
+					}
                  }
             }
         }
@@ -144,7 +169,8 @@ class Product: Codable, Identifiable, ObservableObject {
         isLoading = true
         hasLoaded = false
         
-        title = nil
+		osName = nil
+		title = nil
         buildVersion = nil
         productVersion = nil
         installerVersion = nil
@@ -157,14 +183,14 @@ class Product: Codable, Identifiable, ObservableObject {
         parser.delegate = delegate
         parser.parse()
         
-        self.title = delegate.title
+		self.osName = delegate.osName
+		self.title = delegate.title
         self.productVersion = delegate.productVersion
         self.buildVersion = delegate.buildVersion
         self.installerVersion = delegate.installerVersion
         self.isLoading = false
         self.hasLoaded = true
-        //print(self.title ?? "<no title>")
-        //print(self.buildVersion ?? "<no buildversion>")
+		
     }
     
     enum CodingKeys: String, CodingKey {

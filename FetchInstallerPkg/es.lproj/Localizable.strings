@@ -1,0 +1,44 @@
+/* No comment provided by engineer. */
+"" = "";
+
+/* No comment provided by engineer. */
+"\n\n" = "\n\n";
+
+/* No comment provided by engineer. */
+"  in" = "  en catálogo";
+
+/* No comment provided by engineer. */
+"“%@” already exists! Do you want to replace it?" = "¡“%@” ya existe! ¿Quieres reemplazarlo?";
+
+/* No comment provided by engineer. */
+"A file with the same name already exists in that location. Replacing it will overwrite its current contents." = "Ya existe un archivo con el mismo nombre en esa ubicación. Si lo reemplaza, se sobrescribirá su contenido actual.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Copy %@ %@ (%@) %@ URL" = "Copiar %@ %@ (%@) %@ URL";
+
+/* No comment provided by engineer. */
+"Create application %@ %@ (%@)" = "Crear la aplicación %@ %@ (%@)";
+
+/* No comment provided by engineer. */
+"Download %@ %@ (%@) Installer" = "Descargar Instalador %@ %@ (%@)";
+
+/* No comment provided by engineer. */
+"Download Full Installer" = "Download Full Installer";
+
+/* No comment provided by engineer. */
+"Downloaded %@" = "Descargado %@";
+
+/* No comment provided by engineer. */
+"Downloading %@" = "Descargando %@";
+
+/* No comment provided by engineer. */
+"Replace" = "Reemplazar";
+
+/* No comment provided by engineer. */
+"Show in Finder" = "Mostrar en Finder";
+
+/* No comment provided by engineer. */
+"Cancel %@ download" = "Cancelar descarga de %@";

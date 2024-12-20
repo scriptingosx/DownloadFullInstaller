@@ -16,6 +16,7 @@ import Foundation
         case title
     }
     
+	var osName = String()
     var title = String()
     var buildVersion = String()
     var productVersion = String()
@@ -30,11 +31,15 @@ import Foundation
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 
         if elementName == Elements.pkgref.rawValue {
-            if attributeDict["id"] == "InstallAssistant" {
+            if attributeDict["id"] == "InstallAssistant" || attributeDict["id"] == "InstallESDDmg" {
                 if let version = attributeDict["version"] {
                     self.installerVersion = version
+					self.osName = nameOS[String(self.installerVersion.prefix(2))] ?? "macOS"
                 }
             }
+			if attributeDict["id"] == "InstallESDDmg" {
+				print(attributeDict)
+			}
         }
                 
         if elementName == Elements.auxinfo.rawValue {

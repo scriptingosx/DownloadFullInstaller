@@ -15,8 +15,8 @@ struct FetchInstallerPkgApp: App {
         WindowGroup {
             ContentView().environmentObject(sucatalog).navigationTitle("")
         }
-        Settings {
-            PreferencesView().environmentObject(sucatalog).navigationTitle("Preferences")
-        }
+//        Settings {
+//            PreferencesView().environmentObject(sucatalog).navigationTitle("Program")
+//        }
     }
 }

@@ -1,0 +1,42 @@
+/* No comment provided by engineer. */
+"" = "";
+
+/* No comment provided by engineer. */
+"\n\n" = "\n\n";
+
+/* No comment provided by engineer. */
+"  in" = "  in";
+
+/* No comment provided by engineer. */
+"“%@” already exists! Do you want to replace it?" = "“%@” already exists! Do you want to replace it?";
+
+/* No comment provided by engineer. */
+"A file with the same name already exists in that location. Replacing it will overwrite its current contents." = "A file with the same name already exists in that location. Replacing it will overwrite its current contents.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Copy %@ %@ (%@) %@ URL" = "Copy %@ %@ (%@) %@ URL";
+
+/* No comment provided by engineer. */
+"Create application %@ %@ (%@)" = "Create application %@ %@ (%@)";
+
+/* No comment provided by engineer. */
+"Download %@ %@ (%@) Installer" = "Download %@ %@ (%@) Installer";
+
+/* No comment provided by engineer. */
+"Download Full Installer" = "Download Full Installer";
+
+/* No comment provided by engineer. */
+"Downloaded %@" = "Downloaded %@";
+
+/* No comment provided by engineer. */
+"Downloading %@" = "Downloading %@";
+
+/* No comment provided by engineer. */
+"Replace" = "Replace";
+
+/* No comment provided by engineer. */
+"Show in Finder" = "Show in Finder";
+

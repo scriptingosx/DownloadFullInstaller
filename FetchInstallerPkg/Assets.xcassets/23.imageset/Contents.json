@@ -1,0 +1,22 @@
+{
+  "images": [
+	{
+	  "filename": "macOS Sonoma Light.png",
+	  "idiom": "mac"
+	},
+	{
+		"appearances": [
+			{
+				"appearance": "luminosity",
+				"value": "dark"
+			}
+   ],
+   "filename": "macOS Sonoma Dark.png",
+   "idiom": "mac"
+ }
+  ],
+  "info": {
+	"author": "xcode",
+	"version": 1
+  }
+}

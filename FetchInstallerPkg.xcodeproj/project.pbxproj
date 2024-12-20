@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9629D4592D07605C008D0D7A /* OSNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629D4582D07605C008D0D7A /* OSNames.swift */; };
 		C635B0AA26789DA9001EEA82 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0A926789DA9001EEA82 /* PreferencesView.swift */; };
 		C635B0AC26789F5F001EEA82 /* SeedProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0AB26789F5F001EEA82 /* SeedProgram.swift */; };
 		C635B0AE2678AC9F001EEA82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */; };
@@ -26,10 +27,15 @@
 		C69C80DB26788C4F00E20E20 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DA26788C4F00E20E20 /* DownloadView.swift */; };
 		C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C80DC26788C7900E20E20 /* InstallerView.swift */; };
 		C6E3CB99267A2AFB007084F6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3CB98267A2AFB007084F6 /* IconView.swift */; };
+		D9E6BC5D2D124138002729D4 /* Download-Full-Installer-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E6BC542D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */; };
+		D9E6BC5E2D124138002729D4 /* Download-Full-Installer-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E6BC592D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */; };
+		D9E6BC5F2D124138002729D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E6BC5B2D124138002729D4 /* Localizable.strings */; };
+		D9E6BC602D124138002729D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E6BC562D124138002729D4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C635B0A926789DA9001EEA82 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		9629D4582D07605C008D0D7A /* OSNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSNames.swift; sourceTree = "<group>"; };
+		C635B0A926789DA9001EEA82 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; wrapsLines = 1; };
 		C635B0AB26789F5F001EEA82 /* SeedProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProgram.swift; sourceTree = "<group>"; };
 		C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635B0D92678E9C4001EEA82 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
@@ -51,6 +57,10 @@
 		C69C80DC26788C7900E20E20 /* InstallerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallerView.swift; sourceTree = "<group>"; };
 		C6B969B92681D3BE005717F1 /* Download-Full-Installer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Download-Full-Installer-Info.plist"; sourceTree = "<group>"; };
 		C6E3CB98267A2AFB007084F6 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		D9E6BC532D124138002729D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Download-Full-Installer-InfoPlist.strings"; sourceTree = "<group>"; };
+		D9E6BC552D124138002729D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		D9E6BC582D124138002729D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "Download-Full-Installer-InfoPlist.strings"; sourceTree = "<group>"; };
+		D9E6BC5A2D124138002729D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 		C63643602670E1B800301DC8 /* FetchInstallerPkg */ = {
 			isa = PBXGroup;
 			children = (
+				D9E6BC572D124138002729D4 /* en.lproj */,
+				D9E6BC5C2D124138002729D4 /* es.lproj */,
 				C63643712670E82000301DC8 /* FetchInstallerPkg.entitlements */,
 				C63643612670E1B800301DC8 /* FetchInstallerPkgApp.swift */,
 				C635B0AD2678AC9F001EEA82 /* AppDelegate.swift */,
@@ -116,6 +128,7 @@
 				C69C80D326788BA100E20E20 /* Package.swift */,
 				C69C80CF26788B6B00E20E20 /* DistParserDelegate.swift */,
 				C635B0AB26789F5F001EEA82 /* SeedProgram.swift */,
+				9629D4582D07605C008D0D7A /* OSNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +143,24 @@
 				C6E3CB98267A2AFB007084F6 /* IconView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D9E6BC572D124138002729D4 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D9E6BC542D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */,
+				D9E6BC562D124138002729D4 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		D9E6BC5C2D124138002729D4 /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D9E6BC592D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */,
+				D9E6BC5B2D124138002729D4 /* Localizable.strings */,
+			);
+			path = es.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +192,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					C636435D2670E1B800301DC8 = {
 						CreatedOnToolsVersion = 13.0;
@@ -175,6 +206,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = C63643552670E1B800301DC8;
 			productRefGroup = C636435F2670E1B800301DC8 /* Products */;
@@ -193,6 +225,10 @@
 			files = (
 				C63643692670E1B900301DC8 /* Preview Assets.xcassets in Resources */,
 				C63643662670E1B900301DC8 /* Assets.xcassets in Resources */,
+				D9E6BC5D2D124138002729D4 /* Download-Full-Installer-InfoPlist.strings in Resources */,
+				D9E6BC5E2D124138002729D4 /* Download-Full-Installer-InfoPlist.strings in Resources */,
+				D9E6BC5F2D124138002729D4 /* Localizable.strings in Resources */,
+				D9E6BC602D124138002729D4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +269,7 @@
 				C635B0AA26789DA9001EEA82 /* PreferencesView.swift in Sources */,
 				C69C80DD26788C7900E20E20 /* InstallerView.swift in Sources */,
 				C635B0DA2678E9C4001EEA82 /* Prefs.swift in Sources */,
+				9629D4592D07605C008D0D7A /* OSNames.swift in Sources */,
 				C69C80CE26788B1400E20E20 /* Product.swift in Sources */,
 				C63643622670E1B800301DC8 /* FetchInstallerPkgApp.swift in Sources */,
 				C635B0AC26789F5F001EEA82 /* SeedProgram.swift in Sources */,
@@ -248,12 +285,46 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D9E6BC542D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9E6BC532D124138002729D4 /* en */,
+			);
+			name = "Download-Full-Installer-InfoPlist.strings";
+			sourceTree = "<group>";
+		};
+		D9E6BC562D124138002729D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9E6BC552D124138002729D4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D9E6BC592D124138002729D4 /* Download-Full-Installer-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9E6BC582D124138002729D4 /* es */,
+			);
+			name = "Download-Full-Installer-InfoPlist.strings";
+			sourceTree = "<group>";
+		};
+		D9E6BC5B2D124138002729D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9E6BC5A2D124138002729D4 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C636436A2670E1B900301DC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -288,7 +359,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -317,7 +388,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -352,7 +422,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -364,7 +434,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -379,16 +448,17 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 65;
+				CURRENT_PROJECT_VERSION = 28;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = ER43ZD2S4U;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Download-Full-Installer-Info.plist";
@@ -396,14 +466,14 @@
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleVersion = 17;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel\n@2024 Matxpa (update to version 2.0)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.downloadfullinstaller;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -418,16 +488,17 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FetchInstallerPkg/FetchInstallerPkg.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 65;
+				CURRENT_PROJECT_VERSION = 28;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchInstallerPkg/Preview Content\"";
 				DEVELOPMENT_TEAM = ER43ZD2S4U;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Download-Full-Installer-Info.plist";
@@ -435,14 +506,14 @@
 				INFOPLIST_KEY_CFBundleName = "Download Full Installer";
 				INFOPLIST_KEY_CFBundleVersion = 17;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2021 Scripting OS X - Armin Briegel\n@2024 Matxpa (update to version 2.0)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.scriptingosx.downloadfullinstaller;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = "2.0\U0003";
+				PRODUCT_BUNDLE_IDENTIFIER = None;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

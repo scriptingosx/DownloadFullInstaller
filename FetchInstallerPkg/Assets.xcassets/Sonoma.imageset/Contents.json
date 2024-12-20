@@ -1,21 +1,22 @@
 {
-  "images" : [
-    {
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Sonoma 64.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
-    }
+  "images": [
+	{
+	  "filename": "macOS Sonoma Light.png",
+	  "idiom": "mac"
+	},
+	{
+		"appearances": [
+			{
+				"appearance": "luminosity",
+				"value": "dark"
+			}
+   ],
+   "filename": "macOS Sonoma Dark.png",
+   "idiom": "mac"
+ }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+	"author": "xcode",
+	"version": 1
   }
 }
